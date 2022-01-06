@@ -1,12 +1,14 @@
 #!/bin/bash
 
+# ohmyzsh (plugins = git docker web-search)
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # brew
 xcode-select --install
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+source ~/.zshrc
 brew update
-
-# ohmyzsh (plugins = git docker web-search)
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # fzf
 brew install fzf
@@ -14,10 +16,19 @@ $(brew --prefix)/opt/fzf/install
 
 # python stuff
 brew install pyenv
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
+source ~/.zshrc
+source ~/.zprofile
 pyenv install 3.10.0
 pyenv shell 3.10.0
-sudo pip install virtualenv
-sudo pip install virtualenvwrapper
+python -m pip install --upgrade pip
+pip install virtualenv
+pip install virtualenvwrapper
+
+# poetry
+curl -sSL https://install.python-poetry.org | python -
+echo 'export PATH="~/.local/bin:$PATH"' >> ~/.zshrc
 
 # z
 curl -o ~/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
