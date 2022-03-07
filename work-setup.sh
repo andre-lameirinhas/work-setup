@@ -14,6 +14,18 @@ brew update
 brew install fzf
 $(brew --prefix)/opt/fzf/install
 
+# z
+curl -o ~/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
+echo '. ~/z.sh' >> ~/.zshrc
+
+# bat
+brew install bat
+echo 'alias cat=bat' >> ~/.zshrc
+
+#nvim
+brew install neovim
+echo 'alias vim=nvim' >> ~/.zshrc
+
 # python stuff
 brew install pyenv
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
@@ -30,15 +42,7 @@ pip install virtualenvwrapper
 curl -sSL https://install.python-poetry.org | python -
 echo 'export PATH="~/.local/bin:$PATH"' >> ~/.zshrc
 
-# z
-curl -o ~/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
-echo '. ~/z.sh' >> ~/.zshrc
-
-# bat
-brew install bat
-echo 'alias cat=bat' >> ~/.zshrc
-
 source ~/.zshrc
 
 # casks
-brew install --cask iterm2 visual-studio-code docker
+brew install --cask iterm2 visual-studio-code docker rectangle
