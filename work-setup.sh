@@ -22,21 +22,28 @@ echo '. ~/z.sh' >> ~/.zshrc
 brew install bat
 echo 'alias cat=bat' >> ~/.zshrc
 
-#nvim
+# nvim
 brew install neovim
 echo 'alias vim=nvim' >> ~/.zshrc
 
-# python stuff
+# pyenv
 brew install pyenv
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
-echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
 source ~/.zshrc
-source ~/.zprofile
+
+# python
+echo 'PATH=$(pyenv root)/shims:$PATH' >> ~/.zshrc
 pyenv install 3.10.0
 pyenv shell 3.10.0
 python -m pip install --upgrade pip
-pip install virtualenv
-pip install virtualenvwrapper
+
+# pyenv-virtualenvwrapper
+brew install pyenv-virtualenvwrapper
+echo 'export PYENV_VIRTUALENVWRAPPER_PREFER_PYENV="true"' >> ~/.zshrc
+echo 'export WORKON_HOME=$HOME/.virtualenvs' >> ~/.zshrc
+echo 'pyenv virtualenvwrapper_lazy' >> ~/.zshrc
 
 # poetry
 curl -sSL https://install.python-poetry.org | python -
