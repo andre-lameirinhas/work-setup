@@ -1,4 +1,6 @@
-#!/bin/bash
+#! /usr/bin/env bash
+set -euo pipefail
+
 
 # ohmyzsh (plugins = git docker web-search)
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
