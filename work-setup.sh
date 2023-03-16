@@ -1,16 +1,23 @@
 #! /usr/bin/env bash
 set -euo pipefail
 
-
-# ohmyzsh (plugins = git docker web-search)
+# oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+echo 'plugins=(git docker docker-compose)' >> ~/.zshrc
 
 # brew
 xcode-select --install
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zshrc
 source ~/.zshrc
 brew update
+
+# starship
+brew install starship
+echo 'eval "$(starship init zsh)"' >> ~/.zshrc
+
+# git
+brew install git git-gui
 
 # fzf
 brew install fzf
@@ -46,11 +53,6 @@ brew install pyenv-virtualenvwrapper
 echo 'export PYENV_VIRTUALENVWRAPPER_PREFER_PYENV="true"' >> ~/.zshrc
 echo 'export WORKON_HOME=$HOME/.virtualenvs' >> ~/.zshrc
 echo 'pyenv virtualenvwrapper_lazy' >> ~/.zshrc
-
-# poetry
-curl -sSL https://install.python-poetry.org | python -
-echo 'export PATH="~/.local/bin:$PATH"' >> ~/.zshrc
-
 source ~/.zshrc
 
 # casks
