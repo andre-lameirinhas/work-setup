@@ -2,13 +2,13 @@
 set -euo pipefail
 
 # oh-my-zsh
-# add if
-#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+rm -rf ~/.oh-my-zsh
+ZSH= sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# brew
-# add if
-#xcode-select --install
-# add if
+# homebrew
+if ! xcode-select -p > /dev/null; then
+    xcode-select --install
+fi
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # starship
@@ -33,6 +33,7 @@ brew install neovim
 
 # pyenv
 brew install pyenv
+eval "$(pyenv init -)"
 
 # pyenv-virtualenvwrapper
 brew install pyenv-virtualenvwrapper
@@ -41,7 +42,7 @@ brew install pyenv-virtualenvwrapper
 brew install xz
 pyenv install 3.11.2
 pyenv global 3.11.2
-python -m pip install --upgrade pip setuptools
+python -m pip install --upgrade pip setuptools wheel
 
 # casks
 brew install --cask iterm2 visual-studio-code docker rectangle
