@@ -17,6 +17,7 @@ brew tap homebrew/cask-fonts && brew install --cask font-fira-code-nerd-font
 
 # git
 brew install git git-gui
+git config --global user.email "andre.lameirinhas@gmail.com"
 
 # fzf
 brew install fzf
@@ -45,7 +46,7 @@ pyenv global 3.11.2
 python -m pip install --upgrade pip setuptools wheel
 
 # casks
-brew install --cask iterm2 visual-studio-code docker rectangle
+brew install --cask iterm2 visual-studio-code pycharm-ce docker rectangle opera
 
 cp .zshrc ~/.zshrc
 source ~/.zshrc
