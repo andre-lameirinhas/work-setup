@@ -32,3 +32,7 @@ pyenv virtualenvwrapper_lazy
 # alias
 alias cat=bat
 alias vim=nvim
+
+# set default editor
+export EDITOR=vim
+export VISUAL=vim
