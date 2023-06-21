@@ -33,6 +33,12 @@ brew install bat
 # nvim
 brew install neovim
 
+# phpbrew
+curl -L -O https://github.com/phpbrew/phpbrew/releases/latest/download/phpbrew.phar
+chmod +x phpbrew.phar
+sudo mv phpbrew.phar /usr/local/bin/phpbrew
+phpbrew init
+
 # pyenv
 brew install pyenv
 eval "$(pyenv init -)"
