@@ -48,8 +48,8 @@ brew install pyenv-virtualenvwrapper
 
 # python
 brew install xz
-pyenv install 3.11.2
-pyenv global 3.11.2
+pyenv install 3.12
+pyenv global 3.12
 python -m pip install --upgrade pip setuptools wheel
 
 # casks
