@@ -52,6 +52,9 @@ pyenv install 3.12
 pyenv global 3.12
 python -m pip install --upgrade pip setuptools wheel
 
+# poetry
+curl -sSL https://install.python-poetry.org | python3 -
+
 # casks
 brew install --cask iterm2 visual-studio-code pycharm-ce docker rectangle opera
 

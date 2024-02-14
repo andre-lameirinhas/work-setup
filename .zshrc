@@ -29,6 +29,9 @@ export PYENV_VIRTUALENVWRAPPER_PREFER_PYENV="true"
 export WORKON_HOME=$HOME/.virtualenvs
 pyenv virtualenvwrapper_lazy
 
+# poetry
+export PATH="$HOME/.local/bin:$PATH"
+
 # alias
 alias cat=bat
 alias vim=nvim
