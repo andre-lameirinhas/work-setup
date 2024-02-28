@@ -32,6 +32,11 @@ pyenv virtualenvwrapper_lazy
 # poetry
 export PATH="$HOME/.local/bin:$PATH"
 
+# ruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+chruby 3.3.0
+
 # alias
 alias cat=bat
 alias vim=nvim

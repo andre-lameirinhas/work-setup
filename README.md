@@ -4,7 +4,7 @@
 Setup script for a new work environment
 
 ## Prerequisites
-- Install Homebrew
+- Install Homebrew with `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 - Install git with `brew install git`
 - Clone this repo with `git clone https://github.com/andre-lameirinhas/work-setup.git`
 - Run the script with `./work-setup/work-setup.sh`

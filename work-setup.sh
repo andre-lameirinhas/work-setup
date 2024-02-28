@@ -55,6 +55,10 @@ python -m pip install --upgrade pip setuptools wheel
 # poetry
 curl -sSL https://install.python-poetry.org | python3 -
 
+# ruby
+brew install chruby ruby-install
+ruby-install ruby 3.3.0
+
 # casks
 brew install --cask iterm2 visual-studio-code pycharm-ce docker rectangle opera
 
