@@ -1,5 +1,5 @@
 #! /usr/bin/env zsh
-set -eo pipefail
+set -euo pipefail
 
 # oh-my-zsh
 if [[ -z ${ZSH+x} ]]; then
@@ -53,23 +53,8 @@ brew install bat
 # nvim
 brew install neovim
 
-# phpbrew
+# php
 brew install php
-brew install autoconf pkg-config bzip2 zlib openssl@1.1 oniguruma readline libzip libxml2
-curl -L -O https://github.com/phpbrew/phpbrew/releases/latest/download/phpbrew.phar
-chmod +x phpbrew.phar
-mv phpbrew.phar /usr/local/bin/phpbrew
-phpbrew init
-source ~/.phpbrew/bashrc
-phpbrew lookup-prefix homebrew
-phpbrew update
-if phpbrew use 8.3.3; then
-    echo "PHP 8.3.3 already installed, skipping..."
-else
-    echo "Installing PHP 8.3.3"
-    phpbrew install --jobs $(sysctl -n hw.ncpu) 8.3.3 +default
-fi
-phpbrew switch 8.3.3
 
 # pyenv
 brew install pyenv
