@@ -31,6 +31,9 @@ brew tap homebrew/cask-fonts && brew install --cask font-fira-code-nerd-font
 brew install git git-gui
 git config --global user.email "andre.lameirinhas@gmail.com"
 git config --global pull.rebase true
+git config --global rerere.enabled true
+git config --global column.ui auto
+git config --global branch.sort -committerdate
 
 # fzf
 brew install fzf
