@@ -1,5 +1,5 @@
 #! /usr/bin/env zsh
-set -euo pipefail
+set -eo pipefail
 
 # oh-my-zsh
 if [[ -z ${ZSH+x} ]]; then
