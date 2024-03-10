@@ -60,6 +60,16 @@ curl -L -O https://github.com/phpbrew/phpbrew/releases/latest/download/phpbrew.p
 chmod +x phpbrew.phar
 mv phpbrew.phar /usr/local/bin/phpbrew
 phpbrew init
+source ~/.phpbrew/bashrc
+phpbrew lookup-prefix homebrew
+phpbrew update
+if phpbrew use 8.3.3; then
+    echo "PHP 8.3.3 already installed, skipping..."
+else
+    echo "Installing PHP 8.3.3"
+    phpbrew install --jobs $(sysctl -n hw.ncpu) 8.3.3 +default
+fi
+phpbrew switch 8.3.3
 
 # pyenv
 brew install pyenv
