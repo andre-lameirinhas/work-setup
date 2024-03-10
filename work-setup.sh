@@ -1,5 +1,5 @@
-#! /usr/bin/env bash
-set -euo pipefail
+#! /usr/bin/env zsh
+set -eo pipefail
 
 # oh-my-zsh
 if [[ -z ${ZSH+x} ]]; then
@@ -94,5 +94,6 @@ ruby-install --no-reinstall ruby 3.3.0
 # casks
 #brew install --adopt --casks iterm2 visual-studio-code pycharm-ce docker rectangle opera
 
+echo "Finished initial installation. Copying and sourcing .zshrc"
 cp .zshrc ~/.zshrc
 source ~/.zshrc
