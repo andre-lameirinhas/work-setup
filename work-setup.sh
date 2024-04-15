@@ -34,6 +34,7 @@ git config --global pull.rebase true
 git config --global rerere.enabled true
 git config --global column.ui auto
 git config --global branch.sort -committerdate
+git config --global rebase.updateRefs true
 
 # fzf
 brew install fzf
