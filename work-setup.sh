@@ -57,6 +57,7 @@ brew install neovim
 
 # php
 brew install php
+pecl install xdebug
 
 # pyenv
 brew install pyenv
