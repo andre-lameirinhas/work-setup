@@ -36,6 +36,7 @@ git config --global column.ui auto
 git config --global branch.sort -committerdate
 git config --global rebase.updateRefs true
 git config --global alias.delete-merged-branches '!git switch master && git pull --prune && git branch --format '\''%(refname:short) %(upstream:track)'\'' | awk '\''$2 == "[gone]" { print $1 }'\'' | xargs -r git branch -D'
+git config --global alias.update-branch '!git switch master; git pull; git switch -; git rebase master; git push -f'
 
 # fzf
 brew install fzf
