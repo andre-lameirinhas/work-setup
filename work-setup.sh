@@ -74,7 +74,7 @@ select yn in "Yes" "No"; do
 
 	    break;;
 	No )
-	    echo Skipping php installation
+	    echo "Skipping php installation"
 
 	    break;;
     esac
