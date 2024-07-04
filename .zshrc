@@ -1,3 +1,5 @@
+export LANG="en_US.UTF-8"
+
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
@@ -5,7 +7,12 @@ plugins=(git docker docker-compose)
 source $ZSH/oh-my-zsh.sh
 
 # homebrew
-eval "$(/usr/local/bin/brew shellenv)"
+if [[ $(uname -p) == "arm" ]]; then
+    BIN_PATH="/opt/homebrew/bin"
+else
+    BIN_PATH="/usr/local/bin"
+fi
+eval "$($BIN_PATH/brew shellenv)"
 
 # starship
 eval "$(starship init zsh)"
@@ -16,25 +23,33 @@ eval "$(starship init zsh)"
 # z
 . ~/z.sh
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# gcloud
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
-# pyenv-virtualenvwrapper
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYENV="true"
-export WORKON_HOME=$HOME/.virtualenvs
-pyenv virtualenvwrapper_lazy
+if [[ "$PYTHON_INSTALLED" = true ]]; then
+    # pyenv
+    export PYENV_ROOT="$HOME/.pyenv"
+    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
 
-# poetry
-export PATH="$HOME/.local/bin:$PATH"
+    # pyenv-virtualenvwrapper
+    export PYENV_VIRTUALENVWRAPPER_PREFER_PYENV="true"
+    export WORKON_HOME=$HOME/.virtualenvs
+    pyenv virtualenvwrapper_lazy
 
-# ruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-chruby 3.3.0
+    # poetry
+    export PATH="$HOME/.local/bin:$PATH"
+fi
 
-# alias
+if [[ "$RUBY_INSTALLED" = true ]]; then
+    # ruby
+    source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
+    source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+    chruby 3.3.0
+fi
+
+# aliases
 alias cat=bat
 alias vim=nvim
 
