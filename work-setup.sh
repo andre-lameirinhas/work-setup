@@ -4,8 +4,7 @@ set -eo pipefail
 # oh-my-zsh
 if [[ -z ${ZSH+x} ]]; then
     echo "Installing Oh My Zsh"
-    # TODO: figure out how to prevent this command from exiting the script
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
 else
     echo "Oh My Zsh already present, skipping..."
 fi
