@@ -136,7 +136,7 @@ select yn in "Yes" "No"; do
 done
 
 # casks
-brew install --adopt --casks iterm2 visual-studio-code docker rectangle opera raycast
+brew install --adopt --casks iterm2 visual-studio-code docker rectangle opera raycast meetingbar
 
 echo "Finished initial installation. Generating and sourcing .zshrc"
 echo "PYTHON_INSTALLED=$PYTHON_INSTALLED" > ~/.zshrc

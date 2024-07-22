@@ -16,3 +16,5 @@ Setup script for a new work environment
   - Enable VPN
 - In iTerm2
   - Select Nerd Font by following: iTerm2 -> Settings... -> Profiles -> Text -> Font and then select `FiraCode Nerd Font Mono`
+- Setup MeetingBar with your calendar
+
