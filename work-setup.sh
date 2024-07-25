@@ -25,6 +25,7 @@ fi
 # starship
 brew install starship
 brew install --cask font-fira-code-nerd-font
+cp starship.toml ~/.config/starship.toml
 
 # git
 brew install git git-gui
