@@ -15,6 +15,10 @@ Setup script for a new work environment
   - Add Bitwarden extension
   - Enable VPN
 - In iTerm2
-  - Select Nerd Font by following: iTerm2 -> Settings... -> Profiles -> Text -> Font and then select `FiraCode Nerd Font Mono`
+  - Select Nerd Font: iTerm2 -> Settings... -> Profiles -> Text -> Font and then select `FiraCode Nerd Font Mono`
+  - Change default window size: iTerm2 -> Settings... -> Profiles -> Window and then Columns = 200 and Rows = 50
 - Setup MeetingBar with your calendar
-
+- Add Raycast extensions
+  - Toothpick
+  - Kill Process
+  - Spotify Player
