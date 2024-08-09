@@ -61,6 +61,9 @@ brew install neovim
 # gcloud
 brew install google-cloud-sdk
 
+# watch
+brew install watch
+
 echo "Install php (along with xdebug)?"
 select yn in "Yes" "No"; do
     case $yn in
