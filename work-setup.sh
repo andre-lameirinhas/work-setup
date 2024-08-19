@@ -60,6 +60,7 @@ brew install neovim
 
 # gcloud
 brew install google-cloud-sdk
+gcloud components install gke-gcloud-auth-plugin
 
 # watch
 brew install watch
