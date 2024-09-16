@@ -65,6 +65,9 @@ gcloud components install gke-gcloud-auth-plugin
 # watch
 brew install watch
 
+# glow (markdown reader)
+brew install glow
+
 echo "Install php (along with xdebug)?"
 select yn in "Yes" "No"; do
     case $yn in
