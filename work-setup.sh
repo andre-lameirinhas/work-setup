@@ -52,6 +52,9 @@ else
     echo "z already present, skipping..."
 fi
 
+# nvm
+PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash'
+
 # bat
 brew install bat
 
