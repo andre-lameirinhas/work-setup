@@ -57,6 +57,7 @@ fi
 # aliases
 alias cat=bat
 alias vim=nvim
+alias lg=lazygit
 
 # set default editor
 export EDITOR=vim

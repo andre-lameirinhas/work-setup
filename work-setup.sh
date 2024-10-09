@@ -30,6 +30,7 @@ cp starship.toml ~/.config/starship.toml
 # git
 brew install git git-gui
 brew install --cask git-credential-manager
+brew install jesseduffield/lazygit/lazygit
 
 git config --global user.email "andre.lameirinhas@gmail.com"
 git config --global pull.rebase true
