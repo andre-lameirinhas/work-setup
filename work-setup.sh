@@ -152,9 +152,9 @@ brew install --adopt --casks iterm2 visual-studio-code docker rectangle opera ra
 
 echo "Finished initial installation. Generating and sourcing .zshrc"
 
-sed -i "" "1s/^/PYTHON_INSTALLED=$PYTHON_INSTALLED\n/" .zshrc
-sed -i "" "1s/^/RUBY_INSTALLED=$RUBY_INSTALLED\n/" .zshrc
+sed -i "" "1s/^/PYTHON_INSTALLED=$PYTHON_INSTALLED\n/" zshrc
+sed -i "" "1s/^/RUBY_INSTALLED=$RUBY_INSTALLED\n/" zshrc
 
-awk 'BEGIN {cmd = "readlink -f coffee.sh" cmd | getline coffee_loc close(cmd)} /aliases/ {print; print "alias coffee=" coffee_loc; next}1' .zshrc > ~/.zshrc
+awk 'BEGIN {cmd = "readlink -f coffee.sh" cmd | getline coffee_loc close(cmd)} /aliases/ {print; print "alias coffee=" coffee_loc; next}1' zshrc > ~/.zshrc
 
 source ~/.zshrc
