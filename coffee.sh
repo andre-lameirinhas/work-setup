@@ -2,6 +2,17 @@
 
 NAME=${0##*/}
 
+intro() {
+    echo "            __  __           "
+    echo "           / _|/ _|          "
+    echo "  ___ ___ | |_| |_ ___  ___  "
+    echo " / __/ _ \|  _|  _/ _ \/ _ \ "
+    echo "| (_| (_) | | | ||  __/  __/ "
+    echo " \___\___/|_| |_| \___|\___| "
+    echo
+    echo "A program to prevent your computer from sleeping."
+}
+
 help() {
     echo
     echo "Usage: $NAME <command>"
@@ -12,7 +23,11 @@ help() {
     exit 0
 }
 
-if [[ $# -ne 1 ]]; then
+if [[ $# -eq 0 ]]; then
+    intro
+    help
+elif [[ $# -ne 1 ]]; then
+    echo "Too many arguments"
     help
 fi
 
