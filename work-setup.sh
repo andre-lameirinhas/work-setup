@@ -59,6 +59,9 @@ PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm
 # bat (cat clone with wings)
 brew install bat
 
+# fd (find alternative)
+brew install fd
+
 # nvim
 brew install neovim
 
