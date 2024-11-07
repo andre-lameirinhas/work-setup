@@ -3,13 +3,18 @@
 ## Description
 Setup script for a new work environment
 
-## Prerequisites
-- Install Homebrew with `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-- Install git with `brew install git`
-- Clone this repo with `git clone https://github.com/andre-lameirinhas/work-setup.git`
-- Run the script with `./work-setup/work-setup.sh`
+## Installation
+Download contents:
+```bash
+curl -fsSL https://github.com/andre-lameirinhas/work-setup/archive/master.tar.gz | tar -xz
+```
+Run script:
+```bash
+cd work-setup-master && ./work-setup.sh && cd ..
+```
 
-## Stuff missing
+## Manual Steps
+After the installation script finishes successfully, execute these steps:
 - In Opera Browser
   - Switch search engine to DuckDuckGo
   - Add Bitwarden extension
