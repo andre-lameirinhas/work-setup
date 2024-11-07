@@ -56,7 +56,7 @@ fi
 # nvm
 PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash'
 
-# bat
+# bat (cat clone with wings)
 brew install bat
 
 # nvim
@@ -71,6 +71,9 @@ brew install watch
 
 # glow (markdown reader)
 brew install glow
+
+# htop (process viewer)
+brew install htop
 
 echo "Install php (along with xdebug)?"
 select yn in "Yes" "No"; do
