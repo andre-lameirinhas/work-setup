@@ -33,7 +33,9 @@ fi
 
 CAFFEINE=$(screen -ls | grep coffee)
 
-if [[ $1 == "on" ]]; then
+if [[ $1 == "-v" ]]; then
+    echo "coffee 0.1.0"
+elif [[ $1 == "on" ]]; then
     if [[ -z "$CAFFEINE" ]]; then
         screen -S coffee -dm caffeinate -d
         echo "coffee turned on"

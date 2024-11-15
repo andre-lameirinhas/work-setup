@@ -2,7 +2,7 @@
 set -eo pipefail
 
 # TODO:
-# - fix nvm and gcloud
+# - fix commented tests
 # - update README
 
 # Tests missing:
@@ -11,7 +11,6 @@ set -eo pipefail
 # - git-gui
 # - languages
 # - casks
-# - coffee
 
 error () {
     echo $1
@@ -36,5 +35,6 @@ watch -v >/dev/null
 glow -v >/dev/null
 htop -V >/dev/null
 fastfetch -v >/dev/null
+#coffee -v >/dev/null
 
 echo "All tests have passed!"
