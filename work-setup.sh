@@ -83,6 +83,9 @@ brew install glow
 # htop (process viewer)
 brew install htop
 
+# fastfetch
+brew install fastfetch
+
 echo "Install php (along with xdebug)?"
 select yn in "Yes" "No"; do
     case $yn in
