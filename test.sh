@@ -35,6 +35,9 @@ watch -v >/dev/null
 glow -v >/dev/null
 htop -V >/dev/null
 fastfetch -v >/dev/null
+
+code -v >/dev/null
+docker -v >/dev/null
 #coffee -v >/dev/null
 
 echo "All tests have passed!"
