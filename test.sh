@@ -2,12 +2,11 @@
 set -eo pipefail
 
 # Colors
-Red='\033[0;31m'
-Green='\033[0;32m'
+Red="\033[0;31m"
+Green="\033[0;32m"
 
 # TODO:
 # Tests missing:
-# - alias
 # - font-fira-code-nerd-font
 # - git-gui
 # - languages
@@ -42,5 +41,10 @@ fastfetch -v >/dev/null
 code -v >/dev/null
 docker -v >/dev/null
 coffee -v >/dev/null
+
+# Test aliases
+[[ "$(alias cat)" == "cat=bat" ]] || error "cat alias not set"
+[[ "$(alias vim)" == "vim=nvim" ]] || error "vim alias not set"
+[[ "$(alias lg)" == "lg=lazygit" ]] || error "lg alias not set"
 
 echo "${Green}All tests have passed!"
