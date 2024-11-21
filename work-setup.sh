@@ -162,7 +162,7 @@ select yn in "Yes" "No"; do
 done
 
 # casks
-brew install --adopt --casks iterm2 visual-studio-code docker rectangle opera raycast meetingbar
+brew install --adopt --casks iterm2 visual-studio-code docker rectangle opera raycast meetingbar dbeaver-community bruno
 
 echo "Finished initial installation. Generating and sourcing .zshrc"
 
