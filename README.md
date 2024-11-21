@@ -27,3 +27,10 @@ After the installation script finishes successfully, execute these steps:
   - Toothpick
   - Kill Process
   - Spotify Player
+
+## Testing
+To test your setup, run this command:
+```bash
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/andre-lameirinhas/work-setup/refs/heads/master/test.sh)"
+```
+
