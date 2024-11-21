@@ -7,7 +7,6 @@ Green="\033[0;32m"
 
 # TODO:
 # Tests missing:
-# - font-fira-code-nerd-font
 # - git-gui
 # - languages
 # - casks
@@ -46,5 +45,7 @@ coffee -v >/dev/null
 [[ "$(alias cat)" == "cat=bat" ]] || error "cat alias not set"
 [[ "$(alias vim)" == "vim=nvim" ]] || error "vim alias not set"
 [[ "$(alias lg)" == "lg=lazygit" ]] || error "lg alias not set"
+
+[[ "$(fc-match FiraCodeNerdFont)" == 'FiraCodeNerdFont-Regular.ttf: "FiraCode Nerd Font" "Regular"' ]] || error "firacode font not found"
 
 echo "${Green}All tests have passed!"
