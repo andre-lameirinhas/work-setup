@@ -58,6 +58,7 @@ fi
 alias cat=bat
 alias vim=nvim
 alias lg=lazygit
+alias ls="eza --icons -F -H --group-directories-first --git"
 
 # set default editor
 export EDITOR=vim

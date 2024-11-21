@@ -21,6 +21,7 @@ error () {
 [ ! -z $ZSH ] || error "oh-my-zsh env var is missing"
 brew -v >/dev/null
 starship -V >/dev/null
+[[ "$(fc-match FiraCodeNerdFont)" == 'FiraCodeNerdFont-Regular.ttf: "FiraCode Nerd Font" "Regular"' ]] || error "firacode font not found"
 [ -s ~/.config/starship.toml ] || error "starship config is missing"
 git -v >/dev/null
 git-credential-manager --version >/dev/null
@@ -30,6 +31,7 @@ fzf --version >/dev/null
 nvm -v >/dev/null
 bat -V >/dev/null
 fd -V >/dev/null
+eza -v >/dev/null
 nvim -v >/dev/null
 gcloud -v >/dev/null
 watch -v >/dev/null
@@ -45,7 +47,6 @@ coffee -v >/dev/null
 [[ "$(alias cat)" == "cat=bat" ]] || error "cat alias not set"
 [[ "$(alias vim)" == "vim=nvim" ]] || error "vim alias not set"
 [[ "$(alias lg)" == "lg=lazygit" ]] || error "lg alias not set"
-
-[[ "$(fc-match FiraCodeNerdFont)" == 'FiraCodeNerdFont-Regular.ttf: "FiraCode Nerd Font" "Regular"' ]] || error "firacode font not found"
+[[ "$(alias ls)" == "ls='eza --icons -F -H --group-directories-first --git'" ]] || error "ls alias not set"
 
 echo "${Green}All tests have passed!"

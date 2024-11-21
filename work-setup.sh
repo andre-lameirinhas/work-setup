@@ -67,6 +67,9 @@ brew install bat
 # fd (find alternative)
 brew install fd
 
+# eza (modern ls)
+brew install eza
+
 # nvim
 brew install neovim
 
