@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -eo pipefail
 
-if [[ $1=="--dry-run" ]]; then
+if [[ $# > 0 && $1=="--dry-run" ]]; then
     echo "Running in dry run mode, no action"
     exit 0
 fi
