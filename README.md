@@ -36,14 +36,13 @@ zsh -c "$(curl -fsSL https://raw.githubusercontent.com/andre-lameirinhas/work-se
 
 ## Scripts
 ### Coffee  
-Prevents computer from going to sleep
+Prevents computer from going to sleep. `coffee -h` for available commands.
 ### Brew Upgrader  
-Upgrades brew packages and keeps a log in $HOME/brew_upgrade.log
+Upgrades brew packages and keeps a log in $HOME/brew_upgrade.log. Runs every day at 8am.
 ### Colors  
-Stores colors to be used in scripts
+Stores colors to be used in scripts.
 
 ## TODO
-- Improve Scripts section
-- Move scripts to /scripts folder and test.sh to /tests folder and fix errors caused by that
+- Fix coffee reference in test.sh when calling it via curl
 - Add code to add brew-upgrader to crontab
-
+- Add coffe image to coffee
