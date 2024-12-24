@@ -31,18 +31,19 @@ After the installation script finishes successfully, execute these steps:
 ## Testing
 To test your setup, run this command:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/andre-lameirinhas/work-setup/refs/heads/master/test.sh)"
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/andre-lameirinhas/work-setup/refs/heads/master/tests/test.sh)"
 ```
 
 ## Scripts
-- Coffee
-  Prevents computer from going to sleep
-- Brew Upgrader
-  A log file of the executed upgrades will be stored in $HOME/brew_upgrade.log
-- Colors
-  Stores colors to be used by scripts
+### Coffee  
+Prevents computer from going to sleep
+### Brew Upgrader  
+Upgrades brew packages and keeps a log in $HOME/brew_upgrade.log
+### Colors  
+Stores colors to be used in scripts
 
 ## TODO
 - Improve Scripts section
 - Move scripts to /scripts folder and test.sh to /tests folder and fix errors caused by that
+- Add code to add brew-upgrader to crontab
 
