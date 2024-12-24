@@ -45,4 +45,3 @@ Stores colors to be used in scripts.
 ## TODO
 - Fix coffee reference in test.sh when calling it via curl
 - Add code to add brew-upgrader to crontab
-- Add coffe image to coffee
