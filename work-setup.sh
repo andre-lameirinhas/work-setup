@@ -175,3 +175,6 @@ sed -i "" "1s/^/RUBY_INSTALLED=$RUBY_INSTALLED\n/" zshrc
 awk 'BEGIN {cmd = "readlink -f scripts/coffee.sh" cmd | getline coffee_loc close(cmd)} /aliases/ {print; print "alias coffee=" coffee_loc; next}1' zshrc > ~/.zshrc
 
 source ~/.zshrc
+
+# add brew-upgrader to crontab
+(crontab -l; echo "0 8 * * * $(readlink -f scripts/brew-upgrader.sh)") | sort -u | crontab -

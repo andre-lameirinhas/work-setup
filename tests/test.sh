@@ -10,6 +10,7 @@ Green="\033[0;32m"
 # - git-gui
 # - languages
 # - casks
+# - brew-upgrader.sh
 
 source ~/.zshrc
 
