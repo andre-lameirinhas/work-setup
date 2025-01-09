@@ -5,6 +5,10 @@ brew update -q
 
 OUTDATED=$(brew outdated -v)
 
+if [[ -z $OUTDATED ]]; then
+    OUTDATED="No upgrades available."
+fi
+
 LOG_FILE="$HOME/brew_upgrade.log"
 
 if [[ ! -f $LOG_FILE ]]; then
