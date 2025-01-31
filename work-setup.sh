@@ -35,11 +35,12 @@ cp starship.toml ~/.config/starship.toml
 # git
 brew install git git-gui
 brew install --cask git-credential-manager
-brew install jesseduffield/lazygit/lazygit
 brew install delta
-cp lazygit.yml "$(lg -cd)/config.yml"
+brew install jesseduffield/lazygit/lazygit
+cp lazygit.yml "$(lazygit -cd)/config.yml"
 
 git config --global user.email "andre.lameirinhas@gmail.com"
+git config --global user.name "André Lameirinhas"
 git config --global pull.rebase true
 git config --global rerere.enabled true
 git config --global column.ui auto
@@ -49,6 +50,7 @@ git config --global core.pager delta
 git config --global interactive.diffFilter 'delta --color-only'
 git config --global delta.navigate true
 git config --global merge.conflictStyle zdiff3
+git config --global diff.colorMoved default
 
 # fzf
 brew install fzf
