@@ -36,6 +36,8 @@ cp starship.toml ~/.config/starship.toml
 brew install git git-gui
 brew install --cask git-credential-manager
 brew install jesseduffield/lazygit/lazygit
+brew install delta
+cp lazygit.yml "$(lg -cd)/config.yml"
 
 git config --global user.email "andre.lameirinhas@gmail.com"
 git config --global pull.rebase true
@@ -43,8 +45,10 @@ git config --global rerere.enabled true
 git config --global column.ui auto
 git config --global branch.sort -committerdate
 git config --global rebase.updateRefs true
-git config --global alias.delete-merged-branches '!git switch master && git pull --prune && git branch --format '\''%(refname:short) %(upstream:track)'\'' | awk '\''$2 == "[gone]" { print $1 }'\'' | xargs -r git branch -D'
-git config --global alias.update-branch '!git switch master; git pull; git switch -; git rebase master; git push -f'
+git config --global core.pager delta
+git config --global interactive.diffFilter 'delta --color-only'
+git config --global delta.navigate true
+git config --global merge.conflictStyle zdiff3
 
 # fzf
 brew install fzf
