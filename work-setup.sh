@@ -53,7 +53,7 @@ git config --global delta.line-numbers true
 git config --global merge.conflictStyle zdiff3
 git config --global diff.colorMoved default
 
-# better docker ps
+# dops (better docker ps)
 brew tap mikescher/tap && brew install dops
 
 # fzf

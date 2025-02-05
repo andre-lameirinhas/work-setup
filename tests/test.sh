@@ -27,6 +27,7 @@ starship -V >/dev/null
 git -v >/dev/null
 git-credential-manager --version >/dev/null
 lazygit -v >/dev/null
+dops --version >/dev/null
 fzf --version >/dev/null
 [ -s ~/z.sh ] || error "z is missing"
 nvm -v >/dev/null
