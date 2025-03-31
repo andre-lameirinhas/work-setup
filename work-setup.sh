@@ -99,6 +99,9 @@ brew install htop
 # fastfetch
 brew install fastfetch
 
+# xan (CSV magician)
+brew install xan
+
 echo "Install php (along with xdebug)?"
 select yn in "Yes" "No"; do
     case $yn in

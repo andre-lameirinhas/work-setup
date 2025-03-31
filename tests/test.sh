@@ -40,6 +40,7 @@ watch -v >/dev/null
 glow -v >/dev/null
 htop -V >/dev/null
 fastfetch -v >/dev/null
+xan --version >/dev/null
 
 code -v >/dev/null
 docker -v >/dev/null
