@@ -20,6 +20,7 @@ error () {
 }
 
 [ ! -z $ZSH ] || error "oh-my-zsh env var is missing"
+omz version >/dev/null
 brew -v >/dev/null
 starship -V >/dev/null
 [[ "$(fc-match FiraCodeNerdFont)" == 'FiraCodeNerdFont-Regular.ttf: "FiraCode Nerd Font" "Regular"' ]] || error "firacode font not found"
