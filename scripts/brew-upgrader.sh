@@ -1,6 +1,10 @@
 #!/bin/zsh
 set -eo pipefail
 
+# update oh-my-zsh
+omz update
+
+# check for package updates
 brew update -q
 
 OUTDATED=$(brew outdated -v)
@@ -15,6 +19,7 @@ if [[ ! -f $LOG_FILE ]]; then
     touch $LOG_FILE
 fi
 
+# update packages
 brew upgrade -q
 
 date -R >> $LOG_FILE
