@@ -42,6 +42,7 @@ glow -v >/dev/null
 htop -V >/dev/null
 fastfetch -v >/dev/null
 xan --version >/dev/null
+rg -V >/dev/null
 
 code -v >/dev/null
 docker -v >/dev/null

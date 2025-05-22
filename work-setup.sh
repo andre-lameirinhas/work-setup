@@ -102,6 +102,9 @@ brew install fastfetch
 # xan (CSV magician)
 brew install xan
 
+# rg (faster and better grep)
+brew install ripgrep
+
 echo "Install php (along with xdebug)?"
 select yn in "Yes" "No"; do
     case $yn in
