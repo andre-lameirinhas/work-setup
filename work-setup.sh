@@ -181,7 +181,7 @@ select yn in "Yes" "No"; do
 done
 
 # casks
-brew install --adopt --casks iterm2 visual-studio-code docker rectangle opera raycast meetingbar dbeaver-community bruno
+brew install --adopt --casks iterm2 visual-studio-code docker rectangle opera raycast meetingbar dbeaver-community bruno libreoffice
 
 echo "Finished initial installation. Generating and sourcing .zshrc"
 
