@@ -105,6 +105,9 @@ brew install xan
 # rg (faster and better grep)
 brew install ripgrep
 
+# go
+brew install go
+
 echo "Install php (along with xdebug)?"
 select yn in "Yes" "No"; do
     case $yn in

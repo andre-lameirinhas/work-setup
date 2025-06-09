@@ -8,9 +8,11 @@ Green="\033[0;32m"
 # TODO:
 # Tests missing:
 # - git-gui
-# - languages
 # - casks
 # - brew-upgrader.sh
+# - python and tools
+# - php and tools
+# - ruby and tools
 
 source ~/.zshrc
 
@@ -53,5 +55,10 @@ coffee -v >/dev/null
 [[ "$(alias vim)" == "vim=nvim" ]] || error "vim alias not set"
 [[ "$(alias lg)" == "lg=lazygit" ]] || error "lg alias not set"
 [[ "$(alias ls)" == "ls='eza --icons -F -H --group-directories-first --git'" ]] || error "ls alias not set"
+
+# languages
+go version >/dev/null
+php -v >/dev/null
+ruby -v >/dev/null
 
 echo "${Green}All tests have passed!"
