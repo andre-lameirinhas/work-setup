@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -eo pipefail
 
-# Colors
+# colors
 Red="\033[0;31m"
 Green="\033[0;32m"
 
@@ -46,11 +46,15 @@ fastfetch -v >/dev/null
 xan --version >/dev/null
 rg -V >/dev/null
 
+# casks
 code -v >/dev/null
 docker -v >/dev/null
+vlc --version >/dev/null
+
+# built programs
 coffee -v >/dev/null
 
-# Test aliases
+# aliases
 [[ "$(alias cat)" == "cat=bat" ]] || error "cat alias not set"
 [[ "$(alias vim)" == "vim=nvim" ]] || error "vim alias not set"
 [[ "$(alias lg)" == "lg=lazygit" ]] || error "lg alias not set"
