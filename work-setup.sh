@@ -131,28 +131,28 @@ done
 echo "Install python (along with pyenv, virtualenvwrapper and poetry)?"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes )
+    Yes )
 	    echo "Installing python and related tools"
 	    PYTHON_INSTALLED=true
 
 	    # pyenv
-            brew install pyenv
-            eval "$(pyenv init -)"
+		brew install pyenv
+		eval "$(pyenv init -)"
 
-            # pyenv-virtualenvwrapper
-            brew install pyenv-virtualenvwrapper
+		# pyenv-virtualenvwrapper
+		brew install pyenv-virtualenvwrapper
 
-            # python
-            brew install xz
-            pyenv install --skip-existing 3.12
-            pyenv global 3.12
+		# python
+		brew install xz
+		pyenv install --skip-existing 3.12
+		pyenv global 3.12
 	    python -m pip install --upgrade pip setuptools wheel
 
 	    # poetry
 	    curl -sSL https://install.python-poetry.org | python3 -
             
-            # pycharm
-            brew install --adopt --cask pycharm-ce
+		# pycharm
+		brew install --adopt --cask pycharm-ce
 
 	    break;;
 	No )
@@ -166,7 +166,7 @@ done
 echo "Install ruby (along with chruby and ruby-install)?"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes )
+    Yes )
 	    echo "Installing ruby and related tools"
 	    RUBY_INSTALLED=true
 
