@@ -38,7 +38,7 @@ bat -V >/dev/null
 fd -V >/dev/null
 eza -v >/dev/null
 nvim -v >/dev/null
-gcloud -v >/dev/null
+gcloud -v >/dev/null 2>&1
 watch -v >/dev/null
 glow -v >/dev/null
 htop -V >/dev/null
@@ -49,7 +49,7 @@ rg -V >/dev/null
 # casks
 code -v >/dev/null
 docker -v >/dev/null
-vlc --version >/dev/null
+vlc --version >/dev/null 2>&1
 
 # built programs
 coffee -v >/dev/null
