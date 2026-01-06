@@ -32,6 +32,9 @@ export NVM_DIR="$HOME/.nvm"
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
+# Mole shell completion
+if output="$(mole completion zsh 2>/dev/null)"; then eval "$output"; fi
+
 if [[ "$PYTHON_INSTALLED" = true ]]; then
     # pyenv
     export PYENV_ROOT="$HOME/.pyenv"

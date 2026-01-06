@@ -105,6 +105,9 @@ brew install xan
 # rg (faster and better grep)
 brew install ripgrep
 
+# mole (macos maintenance)
+brew install mole
+
 source languages.sh
 
 # casks

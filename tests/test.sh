@@ -45,6 +45,7 @@ htop -V >/dev/null
 fastfetch -v >/dev/null
 xan --version >/dev/null
 rg -V >/dev/null
+mole --version >/dev/null
 
 # casks
 code -v >/dev/null
