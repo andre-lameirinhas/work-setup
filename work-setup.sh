@@ -68,6 +68,9 @@ else
     echo "z already present, skipping..."
 fi
 
+# claude code
+curl -fsSL https://claude.ai/install.sh | bash
+
 # nvm
 PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash'
 
