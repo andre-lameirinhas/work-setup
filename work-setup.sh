@@ -39,6 +39,9 @@ brew install delta
 brew install jesseduffield/lazygit/lazygit
 cp lazygit.yml "$(lazygit -cd)/config.yml"
 
+# gh (github cli)
+brew install gh
+
 git config --global user.email "andre.lameirinhas@gmail.com"
 git config --global user.name "André Lameirinhas"
 git config --global pull.rebase true

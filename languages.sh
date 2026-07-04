@@ -33,6 +33,9 @@ select yn in "Yes" "No"; do
 	        pecl install xdebug
 	    fi
 
+	    # composer
+	    brew install composer
+
 	    break;;
 	No )
 	    echo "Skipping php installation"
