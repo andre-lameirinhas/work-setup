@@ -114,6 +114,10 @@ brew install ripgrep
 # mole (macos maintenance)
 brew install mole
 
+# rtk (token-optimized CLI proxy for Claude Code)
+brew install rtk
+rtk init -g --auto-patch
+
 source languages.sh
 
 # casks

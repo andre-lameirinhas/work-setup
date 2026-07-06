@@ -46,6 +46,7 @@ fastfetch -v >/dev/null
 xan --version >/dev/null
 rg -V >/dev/null
 mole --version >/dev/null
+rtk --version >/dev/null
 
 # casks
 code -v >/dev/null
