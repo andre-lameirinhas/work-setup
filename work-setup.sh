@@ -121,7 +121,19 @@ rtk init -g --auto-patch
 source languages.sh
 
 # casks
-brew install --adopt --casks iterm2 visual-studio-code docker rectangle opera raycast meetingbar dbeaver-community bruno libreoffice vlc
+# iterm2 - terminal emulator
+# visual-studio-code - code editor
+# docker - containerization platform
+# rectangle - window management
+# opera - web browser
+# raycast - productivity launcher
+# meetingbar - meeting reminders in the menu bar
+# dbeaver-community - database management tool
+# bruno - API client
+# libreoffice - office suite
+# vlc - media player
+# whatcable - USB-C cable diagnostics menu bar app
+brew install --adopt --casks iterm2 visual-studio-code docker rectangle opera raycast meetingbar dbeaver-community bruno libreoffice vlc darrylmorley/whatcable/whatcable
 
 echo "Finished initial installation. Generating and sourcing .zshrc"
 

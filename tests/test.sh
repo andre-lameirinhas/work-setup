@@ -52,6 +52,7 @@ rtk --version >/dev/null
 code -v >/dev/null
 docker -v >/dev/null
 vlc --version >/dev/null 2>&1
+whatcable --version >/dev/null 2>&1
 
 # built programs
 coffee -v >/dev/null
