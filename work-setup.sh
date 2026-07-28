@@ -37,7 +37,7 @@ brew install git git-gui
 brew install --cask git-credential-manager
 brew install delta
 brew install lazygit
-cp lazygit.yml "$(lazygit -cd)/config.yml"
+mkdir -p "$(lazygit -cd)" && cp lazygit.yml "$(lazygit -cd)/config.yml"
 
 # gh (github cli)
 brew install gh
