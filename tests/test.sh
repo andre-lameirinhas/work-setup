@@ -7,7 +7,6 @@ Green="\033[0;32m"
 
 # TODO:
 # Tests missing:
-# - git-gui
 # - brew-upgrader.sh
 
 source ~/.zshrc
@@ -24,6 +23,7 @@ starship -V >/dev/null
 [[ "$(fc-match FiraCodeNerdFont)" == 'FiraCodeNerdFont-Regular.ttf: "FiraCode Nerd Font" "Regular"' ]] || error "firacode font not found"
 [ -s ~/.config/starship.toml ] || error "starship config is missing"
 git -v >/dev/null
+git gui --version >/dev/null
 git-credential-manager --version >/dev/null
 lazygit -v >/dev/null
 dops --version >/dev/null
