@@ -7,7 +7,7 @@ if [[ $# > 0 && $1=="--dry-run" ]]; then
 fi
 
 # oh-my-zsh
-if [[ -z ${ZSH+x} ]]; then
+if [[ ! -d "${ZSH:-$HOME/.oh-my-zsh}" ]]; then
     echo "Installing Oh My Zsh"
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
 else
