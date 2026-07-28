@@ -148,7 +148,8 @@ source languages.sh
 # libreoffice - office suite
 # vlc - media player
 # whatcable - USB-C cable diagnostics menu bar app
-brew install --adopt --casks iterm2 visual-studio-code docker rectangle opera raycast meetingbar dbeaver-community bruno libreoffice vlc darrylmorley/whatcable/whatcable
+# spotify - music streaming
+brew install --adopt --casks iterm2 visual-studio-code docker rectangle opera raycast meetingbar dbeaver-community bruno libreoffice vlc darrylmorley/whatcable/whatcable spotify
 
 echo "Finished initial installation. Generating and sourcing .zshrc"
 
