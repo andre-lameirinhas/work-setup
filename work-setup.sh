@@ -22,6 +22,13 @@ fi
 if [[ $(command -v brew) == "" ]]; then
     echo "Installing brew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    if [[ $(uname -p) == "arm" ]]; then
+        BIN_PATH="/opt/homebrew/bin"
+    else
+        BIN_PATH="/usr/local/bin"
+    fi
+    eval "$($BIN_PATH/brew shellenv)"
 else
     echo "brew already present, updating..."
     brew update && brew upgrade
