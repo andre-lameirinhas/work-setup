@@ -36,7 +36,7 @@ cp starship.toml ~/.config/starship.toml
 brew install git git-gui
 brew install --cask git-credential-manager
 brew install delta
-brew install jesseduffield/lazygit/lazygit
+brew install lazygit
 cp lazygit.yml "$(lazygit -cd)/config.yml"
 
 # gh (github cli)
@@ -57,7 +57,8 @@ git config --global merge.conflictStyle zdiff3
 git config --global diff.colorMoved default
 
 # dops (better docker ps)
-brew tap mikescher/tap && brew install dops
+brew trust mikescher/tap && brew tap mikescher/tap
+brew install dops
 
 # fzf
 brew install fzf
