@@ -34,7 +34,7 @@ if command -v pyenv >/dev/null 2>&1; then
     pyenv commands | grep -q virtualenvwrapper || error "pyenv-virtualenvwrapper not installed"
     python -m pip --version >/dev/null || error "pip check failed"
     poetry --version >/dev/null || error "poetry check failed"
-    [ -d "/Applications/PyCharm CE.app" ] || error "pycharm-ce not installed"
+    brew list --cask pycharm-ce >/dev/null || error "pycharm-ce not installed"
 else
     echo "python not installed, skipping"
 fi
