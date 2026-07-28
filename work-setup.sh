@@ -72,7 +72,12 @@ else
 fi
 
 # claude code
-curl -fsSL https://claude.ai/install.sh | bash
+if [[ $(command -v claude) == "" ]]; then
+    echo "Installing Claude Code"
+    curl -fsSL https://claude.ai/install.sh | bash
+else
+    echo "Claude Code already present, skipping..."
+fi
 
 # nvm
 PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash'
