@@ -104,7 +104,12 @@ else
 fi
 
 # nvm
-PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash'
+if [[ ! -d ~/.nvm ]]; then
+    echo "Installing nvm"
+    PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash'
+else
+    echo "nvm already present, skipping..."
+fi
 
 # bat (cat clone with wings)
 brew install bat
@@ -144,8 +149,13 @@ brew install ripgrep
 brew install mole
 
 # rtk (token-optimized CLI proxy for Claude Code)
-brew install rtk
-rtk init -g --auto-patch
+if [[ $(command -v rtk) == "" ]]; then
+    echo "Installing rtk"
+    brew install rtk
+    rtk init -g --auto-patch
+else
+    echo "rtk already present, skipping..."
+fi
 
 cp zshrc ~/.zshrc
 
