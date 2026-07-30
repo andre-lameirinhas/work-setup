@@ -147,7 +147,11 @@ brew install mole
 brew install rtk
 rtk init -g --auto-patch
 
-source languages.sh
+if [[ "$SKIP_LANGUAGES" == true ]]; then
+    echo "Skipping language installation prompts"
+else
+    source languages.sh
+fi
 
 # casks
 # iterm2 - terminal emulator
@@ -166,11 +170,6 @@ source languages.sh
 brew install --adopt --casks iterm2 visual-studio-code docker rectangle opera raycast meetingbar dbeaver-community bruno libreoffice vlc darrylmorley/whatcable/whatcable spotify
 
 echo "Finished initial installation. Generating and sourcing .zshrc"
-
-sed -i "" "s/^GO_INSTALLED=.*/GO_INSTALLED=$GO_INSTALLED/" zshrc
-sed -i "" "s/^PHP_INSTALLED=.*/PHP_INSTALLED=$PHP_INSTALLED/" zshrc
-sed -i "" "s/^PYTHON_INSTALLED=.*/PYTHON_INSTALLED=$PYTHON_INSTALLED/" zshrc
-sed -i "" "s/^RUBY_INSTALLED=.*/RUBY_INSTALLED=$RUBY_INSTALLED/" zshrc
 
 awk 'BEGIN {cmd = "readlink -f scripts/coffee.sh" cmd | getline coffee_loc close(cmd)} /aliases/ {print; print "alias coffee=" coffee_loc; next}1' zshrc > ~/.zshrc
 

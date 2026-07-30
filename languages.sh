@@ -1,16 +1,6 @@
 #!/bin/zsh
 set -eo pipefail
 
-if [[ "$SKIP_LANGUAGES" == true ]]; then
-    echo "Skipping language installation prompts"
-    GO_INSTALLED=false
-    PHP_INSTALLED=false
-    PYTHON_INSTALLED=false
-    RUBY_INSTALLED=false
-
-    return 0
-fi
-
 echo "Install go?"
 select yn in "Yes" "No"; do
     case $yn in
@@ -109,3 +99,8 @@ select yn in "Yes" "No"; do
 	    break;;
     esac
 done
+
+sed -i "" "s/^GO_INSTALLED=.*/GO_INSTALLED=$GO_INSTALLED/" zshrc
+sed -i "" "s/^PHP_INSTALLED=.*/PHP_INSTALLED=$PHP_INSTALLED/" zshrc
+sed -i "" "s/^PYTHON_INSTALLED=.*/PYTHON_INSTALLED=$PYTHON_INSTALLED/" zshrc
+sed -i "" "s/^RUBY_INSTALLED=.*/RUBY_INSTALLED=$RUBY_INSTALLED/" zshrc
