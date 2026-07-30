@@ -147,6 +147,8 @@ brew install mole
 brew install rtk
 rtk init -g --auto-patch
 
+cp zshrc ~/.zshrc
+
 if [[ "$SKIP_LANGUAGES" == true ]]; then
     echo "Skipping language installation prompts"
 else
@@ -171,7 +173,7 @@ brew install --adopt --casks iterm2 visual-studio-code docker rectangle opera ra
 
 echo "Finished initial installation. Generating and sourcing .zshrc"
 
-awk 'BEGIN {cmd = "readlink -f scripts/coffee.sh" cmd | getline coffee_loc close(cmd)} /aliases/ {print; print "alias coffee=" coffee_loc; next}1' zshrc > ~/.zshrc
+awk 'BEGIN {cmd = "readlink -f scripts/coffee.sh" cmd | getline coffee_loc close(cmd)} /aliases/ {print; print "alias coffee=" coffee_loc; next}1' ~/.zshrc > ~/.zshrc.tmp && mv ~/.zshrc.tmp ~/.zshrc
 
 source ~/.zshrc
 

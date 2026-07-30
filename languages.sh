@@ -100,7 +100,7 @@ select yn in "Yes" "No"; do
     esac
 done
 
-sed -i "" "s/^GO_INSTALLED=.*/GO_INSTALLED=$GO_INSTALLED/" zshrc
-sed -i "" "s/^PHP_INSTALLED=.*/PHP_INSTALLED=$PHP_INSTALLED/" zshrc
-sed -i "" "s/^PYTHON_INSTALLED=.*/PYTHON_INSTALLED=$PYTHON_INSTALLED/" zshrc
-sed -i "" "s/^RUBY_INSTALLED=.*/RUBY_INSTALLED=$RUBY_INSTALLED/" zshrc
+sed -i "" "s/^GO_INSTALLED=.*/GO_INSTALLED=$GO_INSTALLED/" ~/.zshrc
+sed -i "" "s/^PHP_INSTALLED=.*/PHP_INSTALLED=$PHP_INSTALLED/" ~/.zshrc
+sed -i "" "s/^PYTHON_INSTALLED=.*/PYTHON_INSTALLED=$PYTHON_INSTALLED/" ~/.zshrc
+sed -i "" "s/^RUBY_INSTALLED=.*/RUBY_INSTALLED=$RUBY_INSTALLED/" ~/.zshrc
