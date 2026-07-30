@@ -1,10 +1,19 @@
 #!/bin/zsh
 set -eo pipefail
 
-if [[ $# > 0 && $1=="--dry-run" ]]; then
-    echo "Running in dry run mode, no action"
-    exit 0
-fi
+SKIP_LANGUAGES=false
+
+for arg in "$@"; do
+    case "$arg" in
+        --dry-run)
+            echo "Running in dry run mode, no action"
+            exit 0
+            ;;
+        --skip-languages)
+            SKIP_LANGUAGES=true
+            ;;
+    esac
+done
 
 # oh-my-zsh
 if [[ ! -d "${ZSH:-$HOME/.oh-my-zsh}" ]]; then
@@ -158,8 +167,10 @@ brew install --adopt --casks iterm2 visual-studio-code docker rectangle opera ra
 
 echo "Finished initial installation. Generating and sourcing .zshrc"
 
-sed -i "" "1s/^/PYTHON_INSTALLED=$PYTHON_INSTALLED\n/" zshrc
-sed -i "" "1s/^/RUBY_INSTALLED=$RUBY_INSTALLED\n/" zshrc
+sed -i "" "s/^GO_INSTALLED=.*/GO_INSTALLED=$GO_INSTALLED/" zshrc
+sed -i "" "s/^PHP_INSTALLED=.*/PHP_INSTALLED=$PHP_INSTALLED/" zshrc
+sed -i "" "s/^PYTHON_INSTALLED=.*/PYTHON_INSTALLED=$PYTHON_INSTALLED/" zshrc
+sed -i "" "s/^RUBY_INSTALLED=.*/RUBY_INSTALLED=$RUBY_INSTALLED/" zshrc
 
 awk 'BEGIN {cmd = "readlink -f scripts/coffee.sh" cmd | getline coffee_loc close(cmd)} /aliases/ {print; print "alias coffee=" coffee_loc; next}1' zshrc > ~/.zshrc
 

@@ -1,6 +1,16 @@
 #!/bin/zsh
 set -eo pipefail
 
+if [[ "$SKIP_LANGUAGES" == true ]]; then
+    echo "Skipping language installation prompts"
+    GO_INSTALLED=false
+    PHP_INSTALLED=false
+    PYTHON_INSTALLED=false
+    RUBY_INSTALLED=false
+
+    return 0
+fi
+
 echo "Install go?"
 select yn in "Yes" "No"; do
     case $yn in

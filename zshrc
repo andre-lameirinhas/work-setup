@@ -1,3 +1,7 @@
+GO_INSTALLED=false
+PHP_INSTALLED=false
+RUBY_INSTALLED=false
+PYTHON_INSTALLED=false
 export LANG="en_US.UTF-8"
 
 # oh-my-zsh
