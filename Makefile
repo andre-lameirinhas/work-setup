@@ -2,6 +2,10 @@
 setup:
 	./work-setup.sh
 
+.PHONY: setup-skip-languages
+setup-skip-languages:
+	./work-setup.sh --skip-languages
+
 .PHONY: test
 test:
 	./tests/test.sh

@@ -1,9 +1,9 @@
 #!/bin/zsh
-set -eo pipefail
 
 # colors
 Red="\033[0;31m"
 Green="\033[0;32m"
+NC="\033[0m"
 
 # TODO:
 # Tests missing:
@@ -11,61 +11,83 @@ Green="\033[0;32m"
 
 source ~/.zshrc
 
-error () {
-    echo ${Red}Error: $1
-    exit 1
+FAILURES=0
+
+pass () {
+    echo "${Green}$1 passed${NC}"
 }
 
-[ ! -z $ZSH ] || error "oh-my-zsh env var is missing"
-omz version >/dev/null
-brew -v >/dev/null
-starship -V >/dev/null
-[[ "$(fc-match FiraCodeNerdFont)" == 'FiraCodeNerdFont-Regular.ttf: "FiraCode Nerd Font" "Regular"' ]] || error "firacode font not found"
-[ -s ~/.config/starship.toml ] || error "starship config is missing"
-git -v >/dev/null
-git gui --version >/dev/null
-git-credential-manager --version >/dev/null
-lazygit -v >/dev/null
-dops --version >/dev/null
-fzf --version >/dev/null
-[ -s ~/z.sh ] || error "z is missing"
-nvm -v >/dev/null
-bat -V >/dev/null
-fd -V >/dev/null
-eza -v >/dev/null
-nvim -v >/dev/null
-gcloud -v >/dev/null 2>&1
-watch -v >/dev/null
-glow -v >/dev/null
-htop -V >/dev/null
-fastfetch -v >/dev/null
-xan --version >/dev/null
-rg -V >/dev/null
-mole --version >/dev/null
-rtk --version >/dev/null
+fail () {
+    echo "${Red}$1 failed${NC}"
+    FAILURES=$((FAILURES + 1))
+}
+
+check () {
+    local desc=$1
+    shift
+    if "$@" >/dev/null 2>&1; then
+        pass "$desc"
+    else
+        fail "$desc"
+    fi
+}
+
+[ -n "$ZSH" ] && pass "oh-my-zsh env var" || fail "oh-my-zsh env var"
+check "oh-my-zsh (omz)" omz version
+check "brew" brew -v
+check "starship" starship -V
+[ -s ~/.config/starship.toml ] && pass "starship config" || fail "starship config"
+[[ "$(fc-match FiraCodeNerdFont)" == 'FiraCodeNerdFont-Regular.ttf: "FiraCode Nerd Font" "Regular"' ]] && pass "firacode font" || fail "firacode font"
+check "git" git -v
+check "git gui" git gui --version
+check "git-credential-manager" git-credential-manager --version
+check "lazygit" lazygit -v
+check "dops" dops --version
+check "fzf" fzf --version
+[ -s ~/z.sh ] && pass "z" || fail "z"
+check "nvm" nvm -v
+check "bat" bat -V
+check "fd" fd -V
+check "eza" eza -v
+check "nvim" nvim -v
+check "gcloud" gcloud -v
+check "watch" watch -v
+check "glow" glow -v
+check "htop" htop -V
+check "fastfetch" fastfetch -v
+check "xan" xan --version
+check "rg" rg -V
+check "mole" mole --version
+check "rtk" rtk --version
 
 # casks
-code -v >/dev/null
-docker -v >/dev/null
-vlc --version >/dev/null 2>&1
-whatcable --version >/dev/null 2>&1
-brew list --cask spotify >/dev/null || error "spotify not installed"
-brew list --cask iterm2 >/dev/null || error "iterm2 not installed"
-brew list --cask rectangle >/dev/null || error "rectangle not installed"
-brew list --cask opera >/dev/null || error "opera not installed"
-brew list --cask raycast >/dev/null || error "raycast not installed"
-brew list --cask meetingbar >/dev/null || error "meetingbar not installed"
-brew list --cask dbeaver-community >/dev/null || error "dbeaver-community not installed"
-brew list --cask bruno >/dev/null || error "bruno not installed"
-brew list --cask libreoffice >/dev/null || error "libreoffice not installed"
+check "vscode (code)" code -v
+check "docker" docker -v
+check "vlc" vlc --version
+check "whatcable" whatcable --version
+check "spotify cask" brew list --cask spotify
+check "iterm2 cask" brew list --cask iterm2
+check "rectangle cask" brew list --cask rectangle
+check "opera cask" brew list --cask opera
+check "raycast cask" brew list --cask raycast
+check "meetingbar cask" brew list --cask meetingbar
+check "dbeaver-community cask" brew list --cask dbeaver-community
+check "bruno cask" brew list --cask bruno
+check "libreoffice cask" brew list --cask libreoffice
 
 # built programs
-coffee -v >/dev/null
+COFFEE_BIN=$(alias coffee 2>/dev/null | sed 's/^coffee=//')
+check "coffee" "$COFFEE_BIN" -v
 
 # aliases
-[[ "$(alias cat)" == "cat=bat" ]] || error "cat alias not set"
-[[ "$(alias vim)" == "vim=nvim" ]] || error "vim alias not set"
-[[ "$(alias lg)" == "lg=lazygit" ]] || error "lg alias not set"
-[[ "$(alias ls)" == "ls='eza --icons -F -H --group-directories-first --git'" ]] || error "ls alias not set"
+[[ "$(alias cat)" == "cat=bat" ]] && pass "cat alias" || fail "cat alias"
+[[ "$(alias vim)" == "vim=nvim" ]] && pass "vim alias" || fail "vim alias"
+[[ "$(alias lg)" == "lg=lazygit" ]] && pass "lg alias" || fail "lg alias"
+[[ "$(alias ls)" == "ls='eza --icons -F -H --group-directories-first --git'" ]] && pass "ls alias" || fail "ls alias"
 
-echo "${Green}All tests have passed!"
+if [[ $FAILURES -gt 0 ]]; then
+    echo "${Red}${FAILURES} test(s) failed${NC}"
+    exit 1
+else
+    echo "${Green}All tests have passed!${NC}"
+fi
