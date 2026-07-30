@@ -14,11 +14,11 @@ source ~/.zshrc
 FAILURES=0
 
 pass () {
-    echo "${Green}$1 passed${NC}"
+    echo "$1 ${Green}passed${NC}"
 }
 
 fail () {
-    echo "${Red}$1 failed${NC}"
+    echo "$1 ${Red}failed${NC}"
     FAILURES=$((FAILURES + 1))
 }
 
