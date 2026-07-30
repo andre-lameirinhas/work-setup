@@ -70,8 +70,13 @@ brew trust mikescher/tap && brew tap mikescher/tap
 brew install dops
 
 # fzf
-brew install fzf
-$(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
+if ! command -v fzf &> /dev/null; then
+    echo "Installing fzf"
+    brew install fzf
+    $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
+else
+    echo "fzf already installed, skipping..."
+fi
 
 # z
 if [[ ! -f ~/z.sh ]]; then
