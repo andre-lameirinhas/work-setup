@@ -8,9 +8,13 @@ Download contents:
 ```bash
 curl -fsSL https://github.com/andre-lameirinhas/work-setup/archive/master.tar.gz | tar -xz
 ```
-Run script:
+Go into the downloaded folder:
 ```bash
-cd work-setup-master && ./work-setup.sh && cd ..
+cd work-setup-master
+```
+Run setup:
+```bash
+make setup
 ```
 
 ## Manual Steps
