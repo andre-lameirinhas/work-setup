@@ -48,14 +48,14 @@ fi
 # starship
 brew install starship
 brew install --cask font-fira-code-nerd-font
-cp starship.toml ~/.config/starship.toml
+cp config/starship.toml ~/.config/starship.toml
 
 # git
 brew install git git-gui
 brew install --cask git-credential-manager
 brew install delta
 brew install lazygit
-mkdir -p "$(lazygit -cd)" && cp lazygit.yml "$(lazygit -cd)/config.yml"
+mkdir -p "$(lazygit -cd)" && cp config/lazygit.yml "$(lazygit -cd)/config.yml"
 
 # gh (github cli)
 brew install gh
@@ -185,7 +185,7 @@ brew install --adopt --casks ghostty visual-studio-code docker rectangle opera r
 # remove the macOS-specific config (if present) so it doesn't shadow the XDG one, which always loads after it
 rm -f ~/"Library/Application Support/com.mitchellh.ghostty/config"
 mkdir -p ~/.config/ghostty
-cp ghostty.config ~/.config/ghostty/config
+cp config/ghostty.config ~/.config/ghostty/config
 
 echo "Finished initial installation. Generating and sourcing .zshrc"
 
