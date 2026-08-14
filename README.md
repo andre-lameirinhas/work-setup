@@ -23,9 +23,6 @@ After the installation script finishes successfully, execute these steps:
   - Switch search engine to DuckDuckGo
   - Add Bitwarden extension
   - Enable VPN
-- In iTerm2
-  - Select Nerd Font: iTerm2 -> Settings... -> Profiles -> Text -> Font and then select `FiraCode Nerd Font Mono`
-  - Change default window size: iTerm2 -> Settings... -> Profiles -> Window and then Columns = 200 and Rows = 50
 - Setup MeetingBar with your calendar
 - In Rectangle
   - Use the Rectangle keybindings, not the Spectacle ones

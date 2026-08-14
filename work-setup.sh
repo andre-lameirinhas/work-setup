@@ -166,7 +166,7 @@ else
 fi
 
 # casks
-# iterm2 - terminal emulator
+# ghostty - terminal emulator
 # visual-studio-code - code editor
 # docker - containerization platform
 # rectangle - window management
@@ -179,7 +179,13 @@ fi
 # vlc - media player
 # whatcable - USB-C cable diagnostics menu bar app
 # spotify - music streaming
-brew install --adopt --casks iterm2 visual-studio-code docker rectangle opera raycast meetingbar dbeaver-community bruno libreoffice vlc darrylmorley/whatcable/whatcable spotify
+brew install --adopt --casks ghostty visual-studio-code docker rectangle opera raycast meetingbar dbeaver-community bruno libreoffice vlc darrylmorley/whatcable/whatcable spotify
+
+# ghostty config
+# remove the macOS-specific config (if present) so it doesn't shadow the XDG one, which always loads after it
+rm -f ~/"Library/Application Support/com.mitchellh.ghostty/config"
+mkdir -p ~/.config/ghostty
+cp ghostty.config ~/.config/ghostty/config
 
 echo "Finished initial installation. Generating and sourcing .zshrc"
 

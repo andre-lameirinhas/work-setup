@@ -66,7 +66,8 @@ check "docker" docker -v
 check "vlc" vlc --version
 check "whatcable" whatcable --version
 check "spotify cask" brew list --cask spotify
-check "iterm2 cask" brew list --cask iterm2
+check "ghostty cask" brew list --cask ghostty
+[ -s ~/.config/ghostty/config ] && pass "ghostty config" || fail "ghostty config"
 check "rectangle cask" brew list --cask rectangle
 check "opera cask" brew list --cask opera
 check "raycast cask" brew list --cask raycast
