@@ -6,8 +6,12 @@ setup:
 setup-skip-languages:
 	./work-setup.sh --skip-languages
 
+.PHONY: lint
+lint:
+	@for f in *.sh scripts/*.sh tests/*.sh; do zsh -n "$$f" || exit 1; echo "OK: $$f"; done
+
 .PHONY: test
-test:
+test: lint
 	./tests/test.sh
 
 .PHONY: test-languages
