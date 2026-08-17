@@ -5,6 +5,10 @@ set -eo pipefail
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
+# skip casks that self-update (e.g. Docker Desktop, Spotify) to avoid
+# version-mismatch errors when their own auto-updater has already run
+export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
+
 # update oh-my-zsh
 omz update
 
