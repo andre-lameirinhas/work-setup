@@ -26,6 +26,7 @@ fi
 
 # upgrade packages
 brew upgrade -q
+brew cleanup -q
 
 date -R >> $LOG_FILE
 echo "========================================" >> $LOG_FILE
