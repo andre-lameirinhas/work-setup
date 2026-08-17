@@ -66,6 +66,7 @@ check "docker" docker -v
 check "vlc" vlc --version
 check "whatcable" whatcable --version
 check "spotify cask" brew list --cask spotify
+check "obsidian cask" brew list --cask obsidian
 check "ghostty cask" brew list --cask ghostty
 [ -s ~/.config/ghostty/config.ghostty ] && pass "ghostty config" || fail "ghostty config"
 check "rectangle cask" brew list --cask rectangle

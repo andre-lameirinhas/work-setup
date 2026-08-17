@@ -179,7 +179,8 @@ fi
 # vlc - media player
 # whatcable - USB-C cable diagnostics menu bar app
 # spotify - music streaming
-brew install --adopt --casks ghostty visual-studio-code docker rectangle opera raycast meetingbar dbeaver-community bruno libreoffice vlc darrylmorley/whatcable/whatcable spotify
+# obsidian - note-taking app
+brew install --adopt --casks ghostty visual-studio-code docker rectangle opera raycast meetingbar dbeaver-community bruno libreoffice vlc darrylmorley/whatcable/whatcable spotify obsidian
 
 # ghostty config
 # remove the macOS-specific config (if present) so it doesn't shadow the XDG one, which always loads after it
