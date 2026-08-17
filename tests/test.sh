@@ -67,7 +67,7 @@ check "vlc" vlc --version
 check "whatcable" whatcable --version
 check "spotify cask" brew list --cask spotify
 check "ghostty cask" brew list --cask ghostty
-[ -s ~/.config/ghostty/config ] && pass "ghostty config" || fail "ghostty config"
+[ -s ~/.config/ghostty/config.ghostty ] && pass "ghostty config" || fail "ghostty config"
 check "rectangle cask" brew list --cask rectangle
 check "opera cask" brew list --cask opera
 check "raycast cask" brew list --cask raycast

@@ -185,7 +185,7 @@ brew install --adopt --casks ghostty visual-studio-code docker rectangle opera r
 # remove the macOS-specific config (if present) so it doesn't shadow the XDG one, which always loads after it
 rm -f ~/"Library/Application Support/com.mitchellh.ghostty/config"
 mkdir -p ~/.config/ghostty
-cp config/ghostty.config ~/.config/ghostty/config
+cp config/config.ghostty ~/.config/ghostty/config.ghostty
 
 echo "Finished initial installation. Generating and sourcing .zshrc"
 
