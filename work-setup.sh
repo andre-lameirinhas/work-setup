@@ -95,13 +95,8 @@ else
     echo "z already present, skipping..."
 fi
 
-# claude code
-if [[ $(command -v claude) == "" ]]; then
-    echo "Installing Claude Code"
-    curl -fsSL https://claude.ai/install.sh | bash
-else
-    echo "Claude Code already present, skipping..."
-fi
+# claude code, statusline and rtk
+source scripts/claude-setup.sh
 
 # nvm
 if [[ ! -d ~/.nvm ]]; then
@@ -148,21 +143,12 @@ brew install ripgrep
 # mole (macos maintenance)
 brew install mole
 
-# rtk (token-optimized CLI proxy for Claude Code)
-if [[ $(command -v rtk) == "" ]]; then
-    echo "Installing rtk"
-    brew install rtk
-    rtk init -g --auto-patch
-else
-    echo "rtk already present, skipping..."
-fi
-
 cp zshrc ~/.zshrc
 
 if [[ "$SKIP_LANGUAGES" == true ]]; then
     echo "Skipping language installation prompts"
 else
-    source languages.sh
+    source scripts/languages.sh
 fi
 
 # casks

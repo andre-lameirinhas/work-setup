@@ -18,8 +18,12 @@ test: lint
 test-languages:
 	./tests/test-languages.sh
 
+.PHONY: test-claude
+test-claude:
+	./tests/test-claude.sh
+
 .PHONY: test-all
-test-all: test test-languages
+test-all: test test-languages test-claude
 
 .PHONY: upgrade
 upgrade:

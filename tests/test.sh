@@ -58,7 +58,6 @@ check "fastfetch" fastfetch -v
 check "xan" xan --version
 check "rg" rg -V
 check "mole" mole --version
-check "rtk" rtk --version
 
 # casks
 check "vscode (code)" code -v
