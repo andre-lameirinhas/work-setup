@@ -12,13 +12,25 @@ export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
 # update oh-my-zsh
 omz update
 
+# check for Xcode Command Line Tools updates (install requires sudo, so we
+# only report availability here rather than installing unattended)
+CLT_UPDATE=$(softwareupdate --list 2>/dev/null | grep -i "Command Line Tools" || true)
+
+if [[ -z $CLT_UPDATE ]]; then
+    CLT_UPDATE="No Command Line Tools update available."
+    echo $CLT_UPDATE
+else
+    echo "Command Line Tools update available (run 'softwareupdate --install' to apply):"
+    echo "$CLT_UPDATE"
+fi
+
 # check for package updates
 brew update -q
 
 OUTDATED=$(brew outdated -v)
 
 if [[ -z $OUTDATED ]]; then
-    OUTDATED="No upgrades available."
+    OUTDATED="No brew upgrades available."
     echo $OUTDATED
 fi
 
@@ -34,6 +46,7 @@ brew cleanup -q
 
 date -R >> $LOG_FILE
 echo "========================================" >> $LOG_FILE
+echo $CLT_UPDATE >> $LOG_FILE
 echo $OUTDATED >> $LOG_FILE
 echo "======================================== \n" >> $LOG_FILE
 
