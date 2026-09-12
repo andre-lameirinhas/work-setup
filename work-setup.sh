@@ -163,10 +163,16 @@ fi
 # bruno - API client
 # libreoffice - office suite
 # vlc - media player
-# whatcable - USB-C cable diagnostics menu bar app
 # spotify - music streaming
 # obsidian - note-taking app
-brew install --adopt --casks ghostty visual-studio-code docker rectangle opera raycast meetingbar dbeaver-community bruno libreoffice vlc darrylmorley/whatcable/whatcable spotify obsidian
+casks=(ghostty visual-studio-code docker rectangle opera raycast meetingbar dbeaver-community bruno libreoffice vlc spotify obsidian)
+
+# whatcable - USB-C cable diagnostics menu bar app (Apple Silicon only)
+if [[ "$(uname -m)" == "arm64" ]]; then
+    casks+=(darrylmorley/whatcable/whatcable)
+fi
+
+brew install --adopt --casks "${casks[@]}"
 
 # ghostty config
 # remove the macOS-specific config (if present) so it doesn't shadow the XDG one, which always loads after it
