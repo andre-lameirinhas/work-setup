@@ -31,8 +31,9 @@ OUTDATED=$(brew outdated -v)
 
 if [[ -z $OUTDATED ]]; then
     OUTDATED="No brew upgrades available."
-    echo $OUTDATED
 fi
+
+echo $OUTDATED
 
 LOG_FILE="$HOME/brew_upgrade.log"
 
