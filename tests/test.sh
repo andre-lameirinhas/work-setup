@@ -3,6 +3,7 @@
 # colors
 Red="\033[0;31m"
 Green="\033[0;32m"
+Yellow="\033[0;33m"
 NC="\033[0m"
 
 # TODO:
@@ -20,6 +21,10 @@ pass () {
 fail () {
     echo "$1 ${Red}failed${NC}"
     FAILURES=$((FAILURES + 1))
+}
+
+skip () {
+    echo "$1 ${Yellow}skipped (unsupported)${NC}"
 }
 
 check () {
@@ -63,7 +68,11 @@ check "mole" mole --version
 check "vscode (code)" code -v
 check "docker" docker -v
 check "vlc" vlc --version
-check "whatcable" whatcable --version
+if [[ "$(uname -m)" == "arm64" ]]; then
+    check "whatcable" whatcable --version
+else
+    skip "whatcable (Apple Silicon only)"
+fi
 check "spotify cask" brew list --cask spotify
 check "obsidian cask" brew list --cask obsidian
 check "ghostty cask" brew list --cask ghostty
