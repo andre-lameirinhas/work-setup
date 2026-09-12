@@ -26,13 +26,17 @@ After the installation script finishes successfully, execute these steps:
 - Setup MeetingBar with your calendar
 - In Rectangle
   - Use the Rectangle keybindings, not the Spectacle ones
-- Add Raycast extensions
-  - Toothpick
-  - Kill Process
-  - Spotify Player
-  - Coffee
-  - Mole
-  - Brew
+- In Raycast
+  - Add extensions
+    - Toothpick
+    - Kill Process
+    - Spotify Player
+    - Coffee
+    - Mole
+    - Brew
+  - Set the hotkey to `⌘+Space` (takes over from Spotlight)
+    - System Settings → Keyboard → Keyboard Shortcuts… → Spotlight → uncheck "Show Spotlight search" (Raycast usually offers to do this for you)
+    - Raycast → Preferences → General → Raycast Hotkey → record `⌘+Space`
 
 ## Testing
 To test your setup, run:
