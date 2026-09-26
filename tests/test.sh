@@ -84,6 +84,7 @@ check "meetingbar cask" brew list --cask meetingbar
 check "dbeaver-community cask" brew list --cask dbeaver-community
 check "bruno cask" brew list --cask bruno
 check "libreoffice cask" brew list --cask libreoffice
+check "localsend cask" brew list --cask localsend
 
 # built programs
 COFFEE_BIN=$(alias coffee 2>/dev/null | sed 's/^coffee=//')

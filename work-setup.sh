@@ -165,7 +165,8 @@ fi
 # vlc - media player
 # spotify - music streaming
 # obsidian - note-taking app
-casks=(ghostty visual-studio-code docker rectangle opera raycast meetingbar dbeaver-community bruno libreoffice vlc spotify obsidian)
+# localsend - cross-platform file sharing
+casks=(ghostty visual-studio-code docker rectangle opera raycast meetingbar dbeaver-community bruno libreoffice vlc spotify obsidian localsend)
 
 # whatcable - USB-C cable diagnostics menu bar app (Apple Silicon only)
 if [[ "$(uname -m)" == "arm64" ]]; then
