@@ -25,3 +25,8 @@ if [[ $(command -v rtk) == "" ]]; then
 else
     echo "rtk already present, skipping..."
 fi
+
+# post-edit-check plugin (requires git, jq and perl; git and jq are installed earlier)
+brew install perl
+claude plugin marketplace add git@gitlab.molops.io:shahriar.hena/claude-postedit-check.git
+claude plugin install post-edit-check@post-edit-check

@@ -31,6 +31,7 @@ check () {
 check "claude" claude --version
 check "jq" jq --version
 check "rtk" rtk --version
+check "perl" perl --version
 [ -s ~/.claude/statusline-command.sh ] && pass "claude statusline script" || fail "claude statusline script"
 grep -q "statusLine" ~/.claude/settings.json && pass "claude statusline config" || fail "claude statusline config"
 
