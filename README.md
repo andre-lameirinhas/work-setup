@@ -16,6 +16,10 @@ Run setup:
 ```bash
 make setup
 ```
+To only run the Claude Code setup (install, statusline, rtk, post-edit-check plugin):
+```bash
+make setup-claude
+```
 
 ## Manual Steps
 After the installation script finishes successfully, execute these steps:

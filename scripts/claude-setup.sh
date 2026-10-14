@@ -1,6 +1,9 @@
 #!/bin/zsh
 set -eo pipefail
 
+# Xcode Command Line Tools and homebrew (needed below, may not be installed if this script is run on its own)
+source scripts/homebrew-setup.sh
+
 # claude code
 if [[ $(command -v claude) == "" ]]; then
     echo "Installing Claude Code"
@@ -26,7 +29,7 @@ else
     echo "rtk already present, skipping..."
 fi
 
-# post-edit-check plugin (requires git, jq and perl; git and jq are installed earlier)
-brew install perl
+# post-edit-check plugin (requires git, jq and perl; jq is installed earlier)
+brew install git perl
 claude plugin marketplace add git@gitlab.molops.io:shahriar.hena/claude-postedit-check.git
 claude plugin install post-edit-check@post-edit-check

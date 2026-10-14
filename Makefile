@@ -6,6 +6,10 @@ setup:
 setup-skip-languages:
 	./work-setup.sh --skip-languages
 
+.PHONY: setup-claude
+setup-claude:
+	./scripts/claude-setup.sh
+
 .PHONY: lint
 lint:
 	@for f in *.sh scripts/*.sh tests/*.sh; do zsh -n "$$f" || exit 1; echo "OK: $$f"; done
